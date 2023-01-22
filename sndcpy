@@ -29,4 +29,4 @@ fi
 sleep 2
 
 echo Playing audio...
-"$VLC" -Idummy --demux rawaud --network-caching=0 --play-and-exit tcp://localhost:"$SNDCPY_PORT"
+ffplay -hide_banner -loglevel fatal -nodisp -f s16le -probesize 32 -ac 2 -ar 48000 -acodec pcm_s16le tcp://localhost:28200
